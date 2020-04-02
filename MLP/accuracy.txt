@@ -1,0 +1,7 @@
+Best accuracy: 0.9208  obtained with the following parameters:
+
+iterations	|	neurons	|	learning rate
+--------------------------------------------------------
+800		|	100	|	0.02
+
+
