@@ -1,38 +1,41 @@
 # PR_Course_Team
-Repository for the team projects in the pattern recognition course, MCS 2020 UniFr.
+Repository for the team projects in the pattern recognition course, MCS 2020 UniFr.<br>
+Team "chaussette".
+## Task 2a
 
-# Task 2a (SVM)
+We provide a completed run Jupyter notebook in HTML format at the root of the `/SVM/` folder.
+### Setup and execution
 
-## How to run
+You need to download the MNIST dataset as provided on [Ilias](https://ilias.unibe.ch/goto_ilias3_unibe_fold_1760165.html) and extract the csv files to the `/SVM/data/` folder.
 
-You can open source file to modify parameters cross_validation and svm kernels. If cross validation is enabled,
-then it will perform cross validation on training data. Otherwise, it will run on test set.
+Then you need to install the required python modules to run the project. We suggest doing it in a virtualenv but you probably know that already.
 
-    svm.py
+For example at the root of the `SVM/` folder : 
+- `virtualenv venv`
+- `source venv/Scripts/activate`
+- `pip install -r requirements.txt`
 
-## Results
-You can see the output on svm.ipynb.
+You can then start the jupyter notebook using `jupyter notebook`, select the `svm.ipynb` notebook and run the cells.
 
 
-## Conclusions
+### Results and observations
 
-As C value increases the execution time of the program increases as well.
+Using grid-search, we have found that the best kernel to use was the polynomial one, with degree 2. This resulted in an accuracy on the test set of **98.06 %**.
 
-Highest accuracy we can get with sigmoid is around 0.9102 and rbf is around 0.9649.
+We wanted to try more hyper-parameters, but unfortunately, the computing time using the `GridSearchCV` of `sklearn` with **cross-validation** already took more than an hour and half. 
 
-In comparison of execution times, sigmoid and rbf spends similar time. Polynomial kernel
-performs nearly same with linear kernel and they are faster than sigmoid and rbf.
+A possible solution would be to reduce the size of the dataset, making sure the classes are balanced and computing on the subset.
 
-# Task 2b - Multilayer perceptron
+## Task 2b - Multilayer perceptron
 
-## Overview
+### Overview
 
 The model is trained and tested with a lot of different values (125) for the following parameters:
 - number of neurons (values = 20,40,60,80,100)
 - learning rate (values = 0.02, 0.04, 0.06, 0.08, 0.1)
 - training epochs (values = 200, 400, 600, 800, 1000).
 
-## Best results
+### Best results
 
 Best accuracy (92.08%) obtained with the following parameters:
 - number of neurons = 100
@@ -56,10 +59,10 @@ Fourth iteration
 ![](./4_fold.PNG)
 
 
-# Task 2c - Convolutional Neural Network
+## Task 2c - Convolutional Neural Network
 
-## Plots
+### Plots
 ![Plots](./plots.png)
 
-## Best achieved accuracy
+### Best achieved accuracy
 The maximum accuracy was achieved with lr = 0.001, on epoch 7 with 98.36% accuracy
