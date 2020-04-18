@@ -1,7 +1,7 @@
 # Task 2a
 
 We provide a completed run Jupyter notebook in HTML format at the root of the `/SVM/` folder.
-## Setup
+## Setup and execution
 
 You need to download the MNIST dataset as provided on [Ilias](https://ilias.unibe.ch/goto_ilias3_unibe_fold_1760165.html) and extract the csv files to the `/SVM/data/` folder.
 
@@ -12,24 +12,13 @@ For example at the root of the `SVM/` folder :
 - `source venv/Scripts/activate`
 - `pip install -r requirements.txt`
 
-## How to run
-
 You can then start the jupyter notebook using `jupyter notebook`, select the `svm.ipynb` notebook and run the cells.
 
-You can open source file to modify parameters cross_validation and svm kernels. If cross validation is enabled, 
-then it will perform cross validation on training data. Otherwise, it will run on test set.
 
-    svm.py 
-    
-## Results
-You can see the output on svm.ipynb.
+## Results and observations
 
+Using grid-search, we have found that the best kernel to use was the polynomial one, with degree 2. This resulted in an accuracy on the test set of **98.06 %**.
 
-## Conclusions
+We wanted to try more hyper-parameters, but unfortunately, the computing time using the `GridSearchCV` of `sklearn` with **cross-validation** already took more than an hour and half. 
 
-As C value increases the execution time of the program increases as well.
-
-Highest accuracy we can get with sigmoid is around 0.9102 and rbf is around 0.9649.
-
-In comparison of execution times, sigmoid and rbf spends similar time. Polynomial kernel
-performs nearly same with linear kernel and they are faster than sigmoid and rbf. 
+A possible solution would be to reduce the size of the dataset, making sure the classes are balanced and computing on the subset.
