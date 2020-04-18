@@ -90,11 +90,26 @@ def evaluate(model):
 
 
 def get_best_model():
-    # return MLPClassifier(activation="logistic", learning_rate="constant", solver="sgd", hidden_layer_sizes=, max_iter=, learning_rate_init=)
-    pass
+    params = {
+        'activation': 'logistic',
+        'hidden_layer_sizes': 100,
+        'learning_rate': 'constant',
+        'learning_rate_init': 0.1,
+        'max_iter': 550,
+        'solver': 'sgd'
+    }
+    # Best score: 0.971592039800995
+    model = MLPClassifier(*params)
+    print("Importing train set...")
+    x_train, y_train = read_png(paths["png-train"])
+    print("Train set size:", len(x_train))
+    print("Training...")
+    model.fit(x_train, y_train)
+    return model
 
 
 if __name__ == '__main__':
     filterwarnings('ignore')
-    model = find_best_model()
-    # evaluate(model)
+    # model = find_best_model()
+    model = get_best_model()
+    evaluate(model)
