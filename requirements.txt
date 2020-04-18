@@ -1,0 +1,6 @@
+numpy>=1.16.2
+sklearn>=0.20.3
+sklearn-image>=0.16.2
+matplotlib>=3.0.3
+torch===1.4.0
+torchvision===0.5.0
