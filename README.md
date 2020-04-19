@@ -10,7 +10,7 @@ You need to download the MNIST dataset as provided on [Ilias](https://ilias.unib
 
 Then you need to install the required python modules to run the project. We suggest doing it in a virtualenv but you probably know that already.
 
-For example at the root of the `SVM/` folder : 
+For example at the root of the `SVM/` folder :
 - `virtualenv venv`
 - `source venv/Scripts/activate`
 - `pip install -r requirements.txt`
@@ -22,7 +22,7 @@ You can then start the jupyter notebook using `jupyter notebook`, select the `sv
 
 Using grid-search, we have found that the best kernel to use was the polynomial one, with degree 2. This resulted in an accuracy on the test set of **98.06 %**.
 
-We wanted to try more hyper-parameters, but unfortunately, the computing time using the `GridSearchCV` of `sklearn` with **cross-validation** already took more than an hour and half. 
+We wanted to try more hyper-parameters, but unfortunately, the computing time using the `GridSearchCV` of `sklearn` with **cross-validation** already took more than an hour and half.
 
 A possible solution would be to reduce the size of the dataset, making sure the classes are balanced and computing on the subset.
 
@@ -47,22 +47,43 @@ Best accuracy (92.08%) obtained with the following parameters:
 **Green plot is the accuracy on the training set and the orange one is on the validation set.**
 
 First iteration
-![](./1_fold.PNG)
+![](./img/b/1_fold.PNG)
 
 Second iteration
-![](./2_fold.PNG)
+![](./img/b/2_fold.PNG)
 
 Third iteration
-![](./3_fold.PNG)
+![](./img/b/3_fold.PNG)
 
 Fourth iteration
-![](./4_fold.PNG)
+![](./img/b/4_fold.PNG)
+
+Accuracy over epochs on training and test sets
+For each epochs the accuracy is the max/average/stdev between each fold and each parameter combination (learning rate/number of neurons)
+![](./img/b/accuracy_over_epochs.PNG)
 
 
 ## Task 2c - Convolutional Neural Network
 
 ### Plots
-![Plots](./plots.png)
+![Plots](./img/c/plots.png)
 
 ### Best achieved accuracy
 The maximum accuracy was achieved with lr = 0.001, on epoch 7 with 98.36% accuracy
+
+## Task 2d - Permutated Dataset
+
+### MLP - Multilayer Perceptron
+
+Accuracy with standard images : 0.9745959595959596
+Accuracy with permutated images : 0.9748484848484849
+
+As we can see the model is has efficient in both cases. This is due to the fact that the order of the pixels in the images doesn't matter for this model.
+
+If for example the pixel number 0 has the weight 0.1 and the pixel number 10 has the weight 0.7, when learnt with the standard dataset.
+
+After swapping pixel number 0 and 10 in the permutated dataset, the weight learnt will be also swapped (but learn again, so maybe a bit different since we initialize randomly)
+
+Another way of saying this, is that there is a 1-1 relationship between the position of the pixel and the weights value. So when swapping positions the optimal weights will follow the swap.
+
+### CNN - Convolutional Neural Network

@@ -4,14 +4,14 @@ import matplotlib.pyplot as plt
 from skimage.color import rgb2gray
 
 paths = {
-    "csv-train": "data/mnist-csv-format/mnist_train.csv",
-    "csv-test": "data/mnist-csv-format/mnist_test.csv",
-    "png-train": "data/mnist-png-format/train/",
-    "png-test": "data/mnist-png-format/test/",
-    "png-val": "data/mnist-png-format/val/",
-    "png-perm-train": "data/mnist-permutated-png-format/train/",
-    "png-perm-test": "data/mnist-permutated-png-format/test/",
-    "png-perm-val": "data/mnist-permutated-png-format/val/",
+    "csv-train": "../data/mnist-csv-format/mnist_train.csv",
+    "csv-test": "../data/mnist-csv-format/mnist_test.csv",
+    "png-train": "../data/mnist-png-format/train/",
+    "png-test": "../data/mnist-png-format/test/",
+    "png-val": "../data/mnist-png-format/val/",
+    "png-perm-train": "../data/mnist-permutated-png-format/train/",
+    "png-perm-test": "../data/mnist-permutated-png-format/test/",
+    "png-perm-val": "../data/mnist-permutated-png-format/val/",
 }
 
 
