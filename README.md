@@ -111,8 +111,8 @@ You can then start the jupyter notebook using `jupyter notebook`, select the `cn
 
 #### Results
 
-The accuracy on the test set was 
-The model was training using different learning rates, after which we selected the one that yielded the best results on the validation set, which was $lr = 0.001$ (see Plot below).
+The accuracy found on the test set was 95.91 %.
+The model was trained using different learning rates, after which we selected the one that yielded the best results on the validation set, which was $lr = 0.001$ (see Plot below).
 
 We were surprised to see that without any modification to our CNN architecture, we were able to achieve such precision on the test set. 
 
