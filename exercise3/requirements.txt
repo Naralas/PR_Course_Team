@@ -2,7 +2,7 @@
 
 # exercise3/.ipynb_checkpoints/KeywordSpotting-checkpoint.ipynb: 7,38
 # exercise3/KeywordSpotting.ipynb: 7,38
-Pillow == 7.0.0
+Pillow == 9.0.0
 
 # exercise3/.ipynb_checkpoints/KeywordSpotting-checkpoint.ipynb: 39
 # exercise3/KeywordSpotting.ipynb: 39
