@@ -30,7 +30,7 @@ numpy==1.18.2
 pandocfilters==1.4.2
 parso==0.7.0
 pickleshare==0.7.5
-Pillow==7.1.1
+Pillow==9.0.0
 prometheus-client==0.7.1
 prompt-toolkit==3.0.5
 Pygments==2.6.1
