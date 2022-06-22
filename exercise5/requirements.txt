@@ -6,7 +6,7 @@ networkx == 2.4
 
 # exercise5/.ipynb_checkpoints/Molecules-checkpoint.ipynb: 5
 # exercise5/Molecules.ipynb: 5
-numpy == 1.18.1
+numpy == 1.22.0
 
 # exercise5/.ipynb_checkpoints/Molecules-checkpoint.ipynb: 7,67
 # exercise5/Molecules.ipynb: 7,67
